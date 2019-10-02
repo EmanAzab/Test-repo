@@ -3,13 +3,8 @@ pipeline {
     stages{
         stage('check-index-file'){
             steps{
-                def exists = fileExists 'file'
-                if (exists) {
-                    echo 'Yes'
-                } else {
-                    echo 'No'
-                }
+                sh 'wget -q -O - https://raw.githubusercontent.com/EmanAzab/Test-repo/master/index.html'
             }   
-        }  
+        }   
     } 
 }
