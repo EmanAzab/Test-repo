@@ -3,7 +3,8 @@ pipeline {
     stages{
         stage('check-index-file'){
             steps{
-                if (fileExists('index.html')) {
+                def exists = fileExists 'file'
+                if (exists) {
                     echo 'Yes'
                 } else {
                     echo 'No'
