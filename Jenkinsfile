@@ -5,6 +5,7 @@ pipeline {
             steps{
                 sh 'wget -q -O - https://raw.githubusercontent.com/EmanAzab/Test-repo/master/index.html'
             } 
+         } 
         stage('check-h1-exits'){
             steps{
                 sh 'wget -q -O - https://raw.githubusercontent.com/EmanAzab/Test-repo/master/index.html | grep -i h1'
