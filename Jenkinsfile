@@ -20,6 +20,11 @@ pipeline {
             steps{
                 sh 'wget -q -O - https://raw.githubusercontent.com/EmanAzab/Test-repo/master/index.html | grep -i footer'
             }
-        }   
+        }
+        post {
+           failure {
+            mail to: eman.azab86@gmail.com, subject: 'The Pipeline failed :('
+           }
+        }
     } 
 }
